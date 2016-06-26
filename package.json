@@ -1,0 +1,56 @@
+{
+  "name": "sequential-resolve",
+  "version": "0.0.1",
+  "description": "Apply projection function to each element of array sequentially",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node ./tests/index.test.js",
+    "prebuild": "rimraf dist",
+    "build": "babel --out-dir dist src",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "promise",
+    "promises",
+    "map",
+    "array",
+    "sequence",
+    "sequentially"
+  ],
+  "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.10.1",
+    "babel-preset-es2015": "6.9.0",
+    "rimraf": "2.5.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/sequential-resolve.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/sequential-resolve/issues"
+  },
+  "homepage": "https://github.com/rogerbf/sequential-resolve#readme"
+}
