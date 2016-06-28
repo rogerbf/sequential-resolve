@@ -1,7 +1,7 @@
 {
   "name": "sequential-resolve",
-  "version": "0.0.1",
-  "description": "Apply projection function to each element of array sequentially",
+  "version": "0.1.0",
+  "description": "Apply promise-yielding projection function to each element of array sequentially",
   "main": "./dist/index.js",
   "files": [
     "dist",
