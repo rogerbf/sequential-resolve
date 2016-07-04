@@ -1,14 +1,13 @@
 {
   "name": "sequential-resolve",
-  "version": "0.1.0",
-  "description": "Apply promise-yielding projection function to each element of array sequentially",
+  "version": "0.2.0",
+  "description": "Apply promise-yielding projection function to each element of array, sequentially",
   "main": "./dist/index.js",
   "files": [
     "dist",
     "README.md"
   ],
   "scripts": {
-    "test": "node ./tests/index.test.js",
     "prebuild": "rimraf dist",
     "build": "babel --out-dir dist src",
     "prepublish": "npm run build"
@@ -40,9 +39,6 @@
     "presets": [
       "es2015"
     ]
-  },
-  "directories": {
-    "test": "tests"
   },
   "dependencies": {},
   "repository": {
