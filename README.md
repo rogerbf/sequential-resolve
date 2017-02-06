@@ -1,8 +1,10 @@
 # sequential-resolve
 
-Run tasks, promise yielding or not, sequentially.
+Run asynchronous/synchronous functions sequentially. Returns a promise that resolves when all promises in the sequence have been resolved, or rejects with the reason of the first promise in the sequence that rejects.
 
-Before v1 this module used to do something different, if you need that functionality [sequential-map](https://github.com/rogerbf/sequential-map) might be what you are looking for.
+Expects all asynchronous operations to return a promise.
+
+Version 0.x.x of this module used to do something different, if you need that functionality [sequential-map](https://github.com/rogerbf/sequential-map) might be what you are looking for.
 
 ## usage
 
@@ -23,9 +25,9 @@ resolve(tasks)
 
 ## api
 
-### `resolve([tasks], [Promise])`
+### `resolve([operations], [Promise])`
 
 Returns a Promise.
 
-- `tasks` array of tasks
+- `operations` array of operations
 - `Promise` override the global Promise object
