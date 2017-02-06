@@ -30,7 +30,11 @@ test(`rejects`, () => {
 
 test(`rejects when task throws`, () => {
   const task = () => { throw Error(`an error`) }
-  resolve([ task ])
+  const otherTask = jest.fn()
+  resolve([ task, otherTask ])
   .then(result => expect(result).toBeUndefined())
-  .catch(error => expect(error.message).toEqual(`an error`))
+  .catch(error => {
+    expect(error.message).toEqual(`an error`)
+    expect(otherTask).not.toHaveBeenCalled()
+  })
 })
