@@ -1,7 +1,7 @@
 {
   "name": "sequential-resolve",
   "version": "1.0.0",
-  "description": "run tasks, promise yielding or not, sequentially",
+  "description": "run asynchronous/synchronous functions sequentially",
   "main": "index.js",
   "scripts": {
     "test": "jest --config .jest",
