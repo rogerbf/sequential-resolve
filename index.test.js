@@ -27,3 +27,10 @@ test(`rejects`, () => {
   .then(result => expect(result).toBeUndefined())
   .catch(error => expect(error).toEqual(`regn`))
 })
+
+test(`rejects when task throws`, () => {
+  const task = () => { throw Error(`an error`) }
+  resolve([ task ])
+  .then(result => expect(result).toBeUndefined())
+  .catch(error => expect(error.message).toEqual(`an error`))
+})
