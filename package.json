@@ -1,7 +1,7 @@
 {
   "name": "sequential-resolve",
   "version": "1.0.0",
-  "description": "",
+  "description": "run tasks, promise yielding or not, sequentially",
   "main": "index.js",
   "scripts": {
     "test": "jest --config .jest",
@@ -18,7 +18,8 @@
     "promises",
     "sequence",
     "series",
-    "task runner"
+    "task runner",
+    "tasks"
   ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
