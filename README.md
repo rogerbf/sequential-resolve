@@ -1,8 +1,8 @@
 # sequential-resolve
 
-Run tasks, that might yield a promise, sequentially.
+Run tasks, promise yielding or not, sequentially.
 
-Before v1 this used to do something different, if you need that functionality [sequential-map](https://github.com/rogerbf/sequential-map) might be what you are looking for.
+Before v1 this module used to do something different, if you need that functionality [sequential-map](https://github.com/rogerbf/sequential-map) might be what you are looking for.
 
 ## usage
 
