@@ -1,31 +1,31 @@
 # sequential-resolve
 
-## install
+Run tasks, that might yield a promise, sequentially.
 
-```
-npm install sequential-resolve
-```
+Before v1 this used to do something different, if you need that functionality [sequential-map](https://github.com/rogerbf/sequential-map) might be what you are looking for.
 
 ## usage
 
-``` js
-const sequence = require('sequential-resolve')
+```javascript
+import resolve from 'sequential-resolve'
 
-const letters = ['a', 'b', 'c']
+const tasks = [
+  `ambitioner`,
+  () => `och`,
+  () => new Promise(resolve => setTimeout(resolve.bind(null, `regn`), 1000))
+]
 
-const slowCharCoder = val => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(val.charCodeAt(0))
-    }, 1000)
-  })
-}
-
-sequence(slowCharCoder, letters, [])
-  .then(charCodes => {
-    console.log(charCodes)
-    // Logs [ 97, 98, 99 ] after ~3000 ms
-  }
-)
-
+resolve(tasks)
+.then(console.log)
+.catch(console.log.bind(null, `error:`))
+// [ `ambitioner`, `och`, `regn`]
 ```
+
+## api
+
+### `resolve([tasks], [Promise])`
+
+Returns a Promise.
+
+- `tasks` array of tasks
+- `Promise` override the global Promise object
